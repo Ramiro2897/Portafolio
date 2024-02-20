@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-image {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  background-image: url('/assets/img/bg_image_1.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(87, 84, 84, 0.5); 
+}
+
+header {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  background-color: rgba(82, 86, 92, 0.8); 
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header h1{
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 50px;
+}
+
+header nav ul{
+  width: 350px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+header nav ul li a{
+  color: #ccc;
+  font-weight: 400;
+  margin: 20px;
+  font-size: .9em;
+}
+
+header .language-selector{
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #ef3724;
+  color: #fff;
+  font-size: .9em;
+  margin: 50px;
+
+}
+
