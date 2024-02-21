@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="/assets/estilos.css">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <title>Portafolio dev</title>
 </head>
 <body>
 
-    <div class="header-image">
+    <div class="header-image" id="main-header">
       <div class="overlay">
         <header>
           <h1>V-Folio</h1>
           <nav>
             <ul>
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#">Acerca</a></li>
-              <li><a href="#">Portafolio</a></li>
-              <li><a href="#">Contacto</a></li>
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#about">Acerca</a></li>
+              <li><a href="#portfolio">Portafolio</a></li>
+              <li><a href="#contact">Contacto</a></li>
+              <li class="language-es" title="idioma"><a href="#">Es</a></li>
             </ul>
           </nav>
           <div class="language-selector">
             <div class="language-option active">ES</div>
             <div class="language-option" style="display: none;">EN</div> 
           </div>
+          <div class="icon-menu" id="menu-toggle">
+            <box-icon name='menu' color='#cccccc'></box-icon>
+          </div>
         </header>
+
+        <!-- informacion desarrollador -->
+        <div class="info-dev" data-aos="fade-up">
+          <div class="text-dev">
+            <p class="welcome">Bienvenido</p>
+            <p class="name-text">Soy <span>Ramiro</span> González</p>
+            <div class="info">
+              
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+    
+
 
 
 
