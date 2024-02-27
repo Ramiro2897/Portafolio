@@ -86,6 +86,30 @@ window.addEventListener("scroll", function() {
     header.style.backgroundColor = "rgba(82, 86, 92, 0.8)";
   }
 });
+  // Controlar el cierre del menú al hacer scroll en pantallas grandes
+window.addEventListener('resize', function() {
+    const scrollPosition = window.scrollY;
+    const scrollThreshold = 0.8 * window.innerHeight;
+  
+    if (window.innerWidth < 768) { 
+      header.style.position = "relative";
+      header.style.top = "auto";
+      header.style.marginTop = "25px";
+      header.style.backgroundColor = "rgba(82, 86, 92, 0.8)";
+    } else {
+      if (scrollPosition >= scrollThreshold) {
+        header.style.position = "fixed";
+        header.style.top = "0";
+        header.style.marginTop = "0";
+        header.style.backgroundColor = "#343c3c";
+      } else {
+        header.style.position = "relative";
+        header.style.top = "auto"; 
+        header.style.marginTop = "25px"; 
+        header.style.backgroundColor = "rgba(82, 86, 92, 0.8)"; 
+      }
+    }
+});
 
 // boton para ir arriba
 document.addEventListener("DOMContentLoaded", function () {
@@ -146,6 +170,18 @@ window.addEventListener('scroll', function() {
   } else {
     aboutLink.classList.remove('active');
   }
+});
+
+// progreso de skills
+document.addEventListener('DOMContentLoaded', function() {
+  let skills = document.querySelectorAll('.skill');
+
+  skills.forEach(function(skill) {
+    let percent = skill.getAttribute('data-percent');
+    let progressBar = skill.querySelector('.progress-bar');
+    progressBar.style.width = percent + '%';
+    progressBar.innerText = percent + '%';
+  });
 });
 
 
