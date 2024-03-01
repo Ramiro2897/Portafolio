@@ -184,6 +184,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// google maps
+function initMap() {
+  // Ubicación de Sincelejo, Sucre, Colombia
+  let sincelejoLatLng = {lat: 9.3047, lng: -75.3977};
+
+  let map = new google.maps.Map(document.getElementById('google-maps'), {
+      zoom: 12,  
+      center: sincelejoLatLng
+  });
+
+  let marker = new google.maps.Marker({
+      position: sincelejoLatLng,
+      map: map,
+      title: 'Sincelejo, Sucre, Colombia' 
+  });
+}
 
 
 
