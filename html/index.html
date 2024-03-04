@@ -3,13 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- libreria de scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- estilos Css -->
   <link rel="stylesheet" href="/assets/estilos.css">
+  <!-- fuente de google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- libreria de iconos -->
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- libreria de scroll -->
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <!-- libreria de visualizacion de imagenes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <!-- libreria iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Portafolio dev</title>
 </head>
@@ -21,16 +32,17 @@
           <h1>V-Folio</h1>
           <nav>
             <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#about">Acerca</a></li>
-              <li><a href="#portfolio">Portafolio</a></li>
-              <li><a href="#contact">Contacto</a></li>
-              <li class="language-es" title="idioma"><a href="#">Es</a></li>
+              <li><a href="#home" id="homeLink">Inicio</a></li>
+              <li><a href="#about" id="aboutLink">Acerca de</a></li>
+              <li><a href="#portfolio" id="portfolioLink">Portafolio</a></li>
+              <li><a href="#contact" id="contactLink">Contacto</a></li>
+              <li class="language-es" title="idioma" id="spanishOptionMobile" onclick="toggleLanguageMobile()"><b><a href="#">ES</a></b></li>
+              <li class="language-es" title="idioma" id="englishOptionMobile" style="display: none;" onclick="toggleLanguageMobile()"><a href="#">EN</a></li>
             </ul>
           </nav>
           <div class="language-selector">
-            <div class="language-option active">ES</div>
-            <div class="language-option" style="display: none;">EN</div> 
+            <div class="language-option active" id="spanishOption" onclick="toggleLanguage()">ES</div>
+            <div class="language-option" id="englishOption" style="display: none;" onclick="toggleLanguage()">EN</div> 
           </div>
           <div class="icon-menu" id="menu-toggle">
             <box-icon name='menu' color='#cccccc'></box-icon>
@@ -40,8 +52,8 @@
         <!-- informacion desarrollador -->
         <div class="info-dev">
           <div class="text-dev">
-            <p class="welcome" data-aos="zoom-in-up">Bienvenido</p>
-            <p class="name-text" data-aos="zoom-in-up">Soy <span>Ramiro</span> González</p>
+            <p class="welcome" id="welcome" data-aos="zoom-in-up">Bienvenido</p>
+            <p class="name-text" id="name-text" data-aos="zoom-in-up">Soy <span>Ramiro</span> González</p>
             <div class="info" data-aos="zoom-in-up">
               
             </div>
@@ -71,7 +83,7 @@
               <li data-aos="flip-left"><b>Edad:</b> 26</li>
               <li data-aos="flip-left"><b>Género:</b> Masculino</li>
             </ul>
-            <button class="btn" data-aos="flip-right">Descargar CV</button>
+            <button id="downloadBtn" class="btn" data-aos="flip-right">Descargar CV</button>
           </div>
         </div>
       </div>
@@ -113,13 +125,13 @@
             </div>
           </div>
           <div class="skill" data-percent="75" data-aos="flip-left">
-            <span class="caption">Bases de datos Sql</span>
+            <span class="caption" id="database">Bases de datos Sql</span>
             <div class="progress">
               <div class="progress-bar" role="progressbar">75%</div>
             </div>
           </div>
           <div class="skill" data-percent="90" data-aos="flip-left">
-            <span class="caption">Diseño Web</span>
+            <span class="caption" id="webDesign">Diseño Web</span>
             <div class="progress">
               <div class="progress-bar" role="progressbar">90%</div>
             </div>
@@ -161,7 +173,7 @@
         </div>
         <!-- contenedor de experiencia -->
         <div class="experiencie-content">
-          <h2 class="title-dev" data-aos="flip-right">Experiencia</h2>
+          <h2 class="title-dev" id="title-experience" data-aos="flip-right">Experiencia</h2>
           <ul class="timeline mt-4 pr-md-5">
             <li>
               <div class="title">2017 - Current</div>
@@ -205,7 +217,7 @@
               <span><i class="fas fa-code"></i></span>
             </div>
             <div class="caption" data-aos="flip-right">
-              <h4 class="fg-theme" data-aos="flip-right">Diseño web</h4>
+              <h4 class="fg-theme" id="caption-text" data-aos="flip-right">Diseño web</h4>
               <p data-aos="flip-right">There are many variations of passages of Lorem Ipsum available</p>
             </div>
           </div>
@@ -251,22 +263,23 @@
     <section class="content-all-portfolio" id="portfolio">
       <div class="content-portfolio">
         <div class="text-portfolio">
-          <p data-aos="flip-right">Portafolio</p>
+          <p data-aos="zoom-in-up">Portafolio</p>
         </div>
-        <h1 data-aos="flip-right">Ver mi trabajo</h1>
+        <h1 data-aos="zoom-in-up" id="text-job">Ver mi trabajo</h1>
         <div class="content-all">
           <div class="filterable-button" data-toggle="selected">
-            <button class="btn btn-theme-outline selected" data-filter="*" data-aos="flip-right">Todo</button>
+            <button class="btn btn-theme-outline selected" id="btn-all" data-filter="*" data-aos="flip-right">Todo</button>
             <button class="btn btn-theme-outline" data-filter=".apps" data-aos="flip-left">Apps</button>
-            <button class="btn btn-theme-outline" data-filter=".template" data-aos="flip-right">Node js</button>
-            <button class="btn btn-theme-outline" data-filter=".ios" data-aos="flip-left">Js</button>
-            <button class="btn btn-theme-outline" data-filter=".ui-ux" data-aos="flip-right">proyectos</button>
+            <button class="btn btn-theme-outline" data-filter=".node-js" data-aos="flip-right">Node js</button>
+            <button class="btn btn-theme-outline" data-filter=".js" data-aos="flip-left">Js</button>
+            <button class="btn btn-theme-outline" id="projects" data-filter=".proyectos" data-aos="flip-right">proyectos</button>
           </div>
         </div>
           <!-- contenido de proyectos -->
         <div class="content-projects">
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="/assets/img/projects/work-1.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p>">
+          <div class="project-item js">
+            <div class="img-place" data-src="/assets/img/projects/work-1.jpg" id="img-project-one" data-fancybox data-caption="<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p> 
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-1.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Mobile Travel App</h5>
@@ -274,8 +287,9 @@
               </div>
             </div>
           </div>
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="../assets/img/work/work-2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Music App</h5> <p>Musics</p>">
+          <div class="project-item proyectos">
+            <div class="img-place" data-src="/assets/img/projects/work-2.jpg" id="img-project-two" data-fancybox data-caption="<h5 class='fg-theme'>Music App</h5> <p>Musics</p>
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-2.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Music App</h5>
@@ -283,8 +297,9 @@
               </div>
             </div>
           </div>
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="../assets/img/work/work-3.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p>">
+          <div class="project-item node-js">
+            <div class="img-place" data-src="/assets/img/projects/work-3.jpg" id="img-project-three" data-fancybox data-caption="<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p>
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-3.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Gaming Dashboard</h5>
@@ -292,8 +307,9 @@
               </div>
             </div>
           </div>
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="../assets/img/work/work-4.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p>">
+          <div class="project-item proyectos">
+            <div class="img-place" data-src="/assets/img/projects/work-4.jpg" id="img-project-four" data-fancybox data-caption="<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p>
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-4.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Drugs Delivery App</h5>
@@ -301,8 +317,9 @@
               </div>
             </div>
           </div>
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="../assets/img/work/work-5.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p>">
+          <div class="project-item apps">
+            <div class="img-place" data-src="/assets/img/projects/work-5.jpg" id="img-project-five" data-fancybox data-caption="<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p>
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-5.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Musics Discover</h5>
@@ -310,8 +327,9 @@
               </div>
             </div>
           </div>
-          <div class="project-item" data-aos="zoom-in-up">
-            <div class="img-place" data-src="../assets/img/work/work-6.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p>">
+          <div class="project-item apps">
+            <div class="img-place" data-src="/assets/img/projects/work-6.jpg" id="img-project-six" data-fancybox data-caption="<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p>
+              <p>Este proyecto es...</p>">
               <img src="/assets/img/projects/work-6.jpg" alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">Game Streaming</h5>
@@ -327,36 +345,56 @@
     <section class="content-contact" id="contact">
       <div class="contact-content">
         <div class="text-contacto">
-          <p data-aos="flip-right">Contacto</p>
+          <p>Contacto</p>
         </div>
-        <h1 class="info-contact-text" data-aos="flip-right">Ponerse en contacto</h1>
+        <h1 class="info-contact-text">Ponerse en contacto</h1>
         <div class="content-contact-info">
           <!-- mapa de google maps -->
-          <div class="vg-maps" data-aos="flip-right">
+          <div class="vg-maps">
             <div id="google-maps" style="width: 100%; height: 100%;"></div>
           </div>
-          <div class="form-contact" data-aos="flip-left">
-            <form class="contact-form">
+          <div class="form-contact">
+            <form class="contact-form" id="form">
               <div class="form-content">
                 <div class="name">
-                  <input class="form-control" type="text" name="Name" placeholder="Nombre">
+                  <input class="form-control" type="text" name="emailjs_name" id="emailjs_name" placeholder="Nombre">
                 </div>
                 <div class="email">
-                  <input class="form-control" type="text" name="Email" placeholder="Correo">
+                  <input class="form-control" type="email" name="emailjs_email" id="emailjs_email" placeholder="Correo">
                 </div>
                 <div class="subject">
-                  <input class="form-control" type="text" name="Subject" placeholder="Asunto">
+                  <input class="form-control" type="text" name="emailjs_subject" id="emailjs_subject" placeholder="Asunto">
                 </div>
                 <div class="message">
-                  <textarea class="form-control" name="Message" rows="6" placeholder="Escribe tu mensaje..."></textarea>
+                  <textarea class="form-control" name="emailjs_message" id="emailjs_message" rows="6" placeholder="Escribe tu mensaje..."></textarea>
                 </div>
-                <button type="submit" class="btn">Enviar mensaje</button>
+                <div class="error-content">
+                  <p class="error" style="display: none;">Por favor, complete todos los campos.</p>
+                  <p id="my-form-status"></p>
+                </div>
+                <button type="submit" id="button" class="btn">Enviar mensaje</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
+
+     <!-- modal para correo enviado exitosamente -->
+     <div id="email-sent" style="display: none;">
+      <div class="email-sent-content">
+        <i class="fas fa-check"></i>
+        <p id="add-product">Correo enviado</p>
+      </div>
+    </div>
+
+    <!-- modal para correo con error -->
+    <div id="error-email" style="display: none;">
+      <div class="error-email-content">
+        <i class="fas fa-exclamation-circle"></i>
+        <p id="error-deliveries">Error en la solicitud</p>
+      </div>
+    </div>
     
     <!-- footer, bloque de informacion adiciona, rede sociales etc -->
     <footer class="footer">
@@ -370,7 +408,7 @@
           <p class="home">Sincé - Sucre D 15 # 14 - 47</p>
         </div>
         <div class="content-redes">
-          <p>Redes sociales</p>
+          <p id="text-redes">Redes sociales</p>
           <p class="divider">---------------------</p>
           <ul class="list-unstyled">
             <li><a href="#">Instagram</a></li>
@@ -380,7 +418,7 @@
           </ul>
         </div>
         <div class="footer-contact">
-          <p>Contáctame</p>
+          <p id="text-contactame">Contáctame</p>
           <p class="divider">------------------</p>
           <ul class="list-unstyled">
             <li>ramirodjaltor2016@gmail.com</li>
@@ -390,7 +428,7 @@
         </div>
       </div>
       <div class="content-copyright">
-        <p class="text-copyright">Copyright &copy;2024. Todos los derechos reservados | by <span class="ti-heart fg-theme-red"></span><a href="#"">Ramiro</a></p>
+        <p class="text-copyright">Copyright &copy;<span id="currentYear"></span> Todos los derechos reservados | by <span class="ti-heart fg-theme-red"></span><a href="#"">Ramiro</a></p>
       </div>
     </footer>
 
@@ -402,6 +440,10 @@
 
 
   <script src="/assets/index.js"></script>
+  <script src="/assets/language.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">emailjs.init('GNY9jkBYkKX3t2Z8N')</script>
 </body>
 </html>

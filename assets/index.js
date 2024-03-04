@@ -129,47 +129,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // enlaces
 window.addEventListener('DOMContentLoaded', function() {
-  const homeSection = document.querySelector('#home');
-  const homeLink = document.querySelector('ul li:first-child a');
-  const aboutSection = document.querySelector('#about');
-  const aboutLink = document.querySelector('ul li:nth-child(2) a');
+  const links = document.querySelectorAll('ul li a');
 
-  const homeTop = homeSection.getBoundingClientRect().top;
-  const aboutTop = aboutSection.getBoundingClientRect().top;
-
-  if (homeTop <= window.innerHeight / 2 && homeTop >= -window.innerHeight / 2) {
-    homeLink.classList.add('active');
-  } else {
-    homeLink.classList.remove('active');
+  function markActiveLink(link, section) {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionBottom = section.getBoundingClientRect().bottom;
+    if (sectionTop <= window.innerHeight / 2 && sectionBottom >= window.innerHeight / 2) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   }
 
-  if (aboutTop <= window.innerHeight / 2 && aboutTop >= -window.innerHeight / 2) {
-    aboutLink.classList.add('active');
-  } else {
-    aboutLink.classList.remove('active');
-  }
-});
-
-window.addEventListener('scroll', function() {
-  const homeSection = document.querySelector('#home');
-  const homeLink = document.querySelector('ul li:first-child a');
-  const aboutSection = document.querySelector('#about');
-  const aboutLink = document.querySelector('ul li:nth-child(2) a');
-
-  const homeTop = homeSection.getBoundingClientRect().top;
-  const aboutTop = aboutSection.getBoundingClientRect().top;
-
-  if (homeTop <= window.innerHeight / 2 && homeTop >= -window.innerHeight / 2) {
-    homeLink.classList.add('active');
-  } else {
-    homeLink.classList.remove('active');
+  function handleScroll() {
+    links.forEach((link, index) => {
+      const sectionId = link.getAttribute('href').substring(1); 
+      const section = document.getElementById(sectionId); 
+      if (section) {
+        markActiveLink(link, section);
+      }
+    });
   }
 
-  if (aboutTop <= window.innerHeight / 2 && aboutTop >= -window.innerHeight / 2) {
-    aboutLink.classList.add('active');
-  } else {
-    aboutLink.classList.remove('active');
-  }
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 });
 
 // progreso de skills
@@ -201,7 +184,144 @@ function initMap() {
   });
 }
 
+// biblioteca para hacer scroll
+ScrollReveal().reveal('.project-item', {
+    scale: 1,
+    origin: 'bottom',
+    distance: '20px',
+    duration: 1200,
+    easing: 'ease-in-out',
+    delay: 0,
+    interval: 0,
+});
 
+// descargar cv
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  downloadBtn.addEventListener('click', function() {
+    const cvUrl = '/assets/cv/cv.pdf';
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.setAttribute('download', 'ramiro_cv.pdf');
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+});
+
+// filtrar proyectos
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll('.filterable-button button');
+  const projects = document.querySelectorAll('.project-item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => {
+        btn.classList.remove('selected');
+      });
+
+      this.classList.add('selected');
+
+      const filterValue = this.getAttribute('data-filter');
+
+      projects.forEach(project => {
+        project.style.display = 'none';
+      });
+
+      let filteredProjects;
+
+      if (filterValue === '*') {
+        filteredProjects = projects;
+      } else {
+        filteredProjects = document.querySelectorAll(filterValue);
+      }
+
+      filteredProjects.forEach((project, index) => {
+        project.style.display = 'block';
+        project.classList.add('filtered-project-animation');
+        setTimeout(() => {
+          project.classList.remove('filtered-project-animation');
+        }, 1000);
+      });
+    });
+  });
+  
+  buttons[0].classList.add('selected');
+});
+
+
+// año actual
+let yearElement = document.getElementById("currentYear");
+let currentYear = new Date().getFullYear();
+yearElement.textContent = currentYear;
+
+// envio del formulario al correo y validacion de campos
+document.addEventListener("DOMContentLoaded", function() {
+  emailjs.init('GNY9jkBYkKX3t2Z8N');
+
+  const form = document.getElementById('form');
+  const nameInput = document.getElementById('emailjs_name');
+  const emailInput = document.getElementById('emailjs_email');
+  const subjectInput = document.getElementById('emailjs_subject');
+  const messageInput = document.getElementById('emailjs_message');
+  const error = form.querySelector('.error');
+
+  form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const subject = subjectInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (!name || !email || !subject || !message) {
+          error.style.display = "flex";
+          setTimeout(function() {
+            error.style.display = "none";
+          }, 5000);
+
+          return;
+      }
+
+      const serviceID = 'default_service';
+      const templateID = 'template_u6wck7l';
+
+      const modalEmailSend = document.getElementById('email-sent');
+      const modalEmailerror = document.getElementById('error-email');
+      emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            modalEmailSend.style.display = 'flex';
+            setTimeout(function() {
+              modalEmailSend.style.display = 'none';
+              form.reset();
+            }, 5000);
+              
+          }, (err) => {
+              modalEmailerror.style.display = 'flex';
+              setTimeout(function() {
+                modalEmailerror.style.display = 'none';
+              }, 5000);
+          });
+  });
+
+  const inputs = [nameInput, subjectInput];
+  inputs.forEach(input => {
+      input.addEventListener('input', function() {
+          this.value = this.value.replace(/[^\w\s]/gi, '').substring(0, 50);
+      });
+  });
+
+  emailInput.addEventListener('input', function() {
+      this.value = this.value.replace(/[^\w\s@.]/gi, '').substring(0, 150);
+  });
+
+  messageInput.addEventListener('input', function() {
+      const maxLength = 550;
+      this.value = this.value.substring(0, maxLength);
+  });
+});
 
 
 

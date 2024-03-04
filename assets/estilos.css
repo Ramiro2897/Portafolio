@@ -81,7 +81,7 @@ header h1{
 }
 
 header nav ul{
-  width: 350px;
+  width: auto;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -106,6 +106,7 @@ header .language-selector{
   margin: 50px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
+  cursor: pointer;
 }
 
 ul li a:hover, .active {
@@ -140,7 +141,7 @@ header nav ul.show {
 }
 
 header nav ul.show li {
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 10px;
 }
 
@@ -153,7 +154,7 @@ header nav ul.show li a {
 }
 
 header nav ul.show li:hover a {
-  color: #fff; /
+  color: #fff; 
 }
 
 header nav ul.show li:first-child a {
@@ -416,7 +417,7 @@ header nav ul.show li:first-child a {
 }
 
 .top i{
-  width: 40px;
+ min-width: 40px;
   height: 40px;
   color: #ccc;
   display: flex;
@@ -801,6 +802,15 @@ ul li .title {
   box-shadow: 0 0 0 3px #fff, 0 0 0 5px #d43403;
 }
 
+.btn-theme-outline.selected,
+.btn-theme-outline.selected:hover,
+.btn-theme-outline.selected:focus {
+  background-color: #d43403;
+  color: #fff;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #d43403;
+
+}
+
 /* contenido de proyecros */
 .content-projects{
   width: 100%;
@@ -817,6 +827,7 @@ ul li .title {
   height: auto;
   border-radius: 2px;
   background-color: #323131;
+  cursor: pointer;
 }
 
 .img-place img{
@@ -829,7 +840,7 @@ ul li .title {
 }
 
 .img-caption{
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 0 10px;
 }
 
@@ -840,6 +851,21 @@ ul li .title {
 .img-caption p{
   color: #ccc;
   font-size: .9em;
+}
+
+.filtered-project-animation {
+  animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* contenido de contacto */
@@ -1006,6 +1032,29 @@ ul li .title {
   border-radius: 3px;
 }
 
+/* error al enviar formulario */
+.form-content .error-content{
+  width: 100%;
+  height: auto;
+}
+
+.error-content .error{
+  color: #922808;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: .9em;
+  font-style: italic;
+  animation: shake 3s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); } 
+  75% { transform: translateX(-3px); } 
+  100% { transform: translateX(0); } 
+}
+
 .form-content button{
   margin: 10px 0;
   padding: 5px;
@@ -1157,7 +1206,6 @@ footer .content-all-footer{
   font-weight: 400;
 }
 
-
 .footer-contact ul{
   padding: 3px;
   margin-right: 10px;
@@ -1182,6 +1230,83 @@ footer .content-all-footer{
 .content-copyright a{
   color: #2f6197;
   font-size: 1em;
+}
+
+/* -----modal de correo----- */
+.email-sent-content {
+  background-color: #127369;
+  width: 250px; 
+  height: auto;
+  padding: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 90px; 
+  right: 10px; 
+  z-index: 900;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  animation: apareceModal 1s ease;
+}
+
+@keyframes apareceModal {
+  from {
+    transform: translateX(0%) translateY(100%);
+  }
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.email-sent-content i{
+  width: 40px;
+  color:#D5E7F2;
+  margin-right: 20px;
+  padding: 3px;
+  border-right: 1px solid #D5E7F2;
+}
+
+.email-sent-content p{
+  color:#D5E7F2;
+  font-size: 1rem;
+  margin: auto;
+  margin-right: 34px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* modal error al enviar correo */
+.error-email-content {
+  background-color: #A60303;
+  width: 250px; 
+  height: auto;
+  padding: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 90px; 
+  right: 10px; 
+  z-index: 900;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  animation: apareceModal 1s ease;
+}
+
+.error-email-content i{
+  width: 40px;
+  color:#D5E7F2;
+  margin-right: 20px;
+  padding: 3px;
+  border-right: 1px solid #D5E7F2;
+}
+
+.error-email-content p{
+  color:#D5E7F2;
+  font-size: 1rem;
+  margin: auto;
+  margin-right: 25px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* responsive */
@@ -1231,12 +1356,18 @@ footer .content-all-footer{
 
   .language-es {
     display: flex;
+    align-items: center;
+    width: 100%;
+    max-height: 43px;
   }
 
   .language-es a{
     background-color: rgba(69, 71, 73, 0.8);
     border-radius: 15px;
     padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    border: 1px solid rgb(131, 119, 119);
   }
 
   .icon-menu {
@@ -1244,7 +1375,7 @@ footer .content-all-footer{
     border: 1px solid #ccc;
     display: flex;
     border-radius: 5px;
-    padding: 2px;
+    padding: 2px 4px;
     cursor: pointer;
 }
 
@@ -1363,6 +1494,7 @@ footer .content-all-footer{
     background-color: rgba(69, 71, 73, 0.8);
     border-radius: 15px;
     padding: 10px;
+    border: 1px solid rgb(131, 119, 119);
   }
 
   .icon-menu {
