@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // pasar text animado
 document.addEventListener('DOMContentLoaded', (event) => {
   const infoDiv = document.querySelector('.info');
-  const textos = ["UI/UX & full stack", "Desarrollador web", "Desarrollador JavaScript", "Diseñador web"];
+  const textos = ["Web Full Stack Developer", "JavaScript Developer", "Web Designer"];
   let indiceTextoActual = 0;
   let indiceCaracter = 0;
   let intervaloEscritura;
@@ -200,10 +200,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadBtn = document.getElementById('downloadBtn');
 
   downloadBtn.addEventListener('click', function() {
-    const cvUrl = '/assets/cv/cv.pdf';
+    const cvUrl = '/assets/cv/hoja_de_vida.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.setAttribute('download', 'ramiro_cv.pdf');
+    link.setAttribute('download', 'hoja_de_vida.pdf');
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();

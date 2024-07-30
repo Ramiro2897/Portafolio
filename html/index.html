@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/icons/logo-portfolio.png" type="image/png">
+
   <!-- libreria de scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -54,7 +56,7 @@
           <div class="text-dev">
             <p class="welcome" id="welcome" data-aos="zoom-in-up">Bienvenido</p>
             <p class="name-text" id="name-text" data-aos="zoom-in-up">Soy <span>Ramiro</span> González</p>
-            <div class="info" data-aos="zoom-in-up">
+            <div class="info" data-aos="zoom-in-up" translate="no">
               
             </div>
           </div>
@@ -65,8 +67,8 @@
 
     <section class="section-one" id="about">
       <div class="section-info">
-        <div class="image">
-          <div class="image-content" data-aos="zoom-in-up">
+        <div class="image" data-aos="zoom-in-up">
+          <div class="image-content">
 
           </div>
 
@@ -75,12 +77,15 @@
         <div class="dev-info" data-aos="slide-up">
           <div class="content-dev-info">
             <h1 class="name-dev" data-aos="flip-right">Ramiro González</h1>
-            <h5 class="profession-dev" data-aos="flip-right">Desarrollador full stack</h5>
-            <p class="description-dev" data-aos="flip-left">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form but the majority have suffered alteration in some</p>
+            <h5 class="profession-dev" data-aos="flip-right">Desarrollador Web full stack</h5>
+            <p class="description-dev" id="information-dev" data-aos="flip-left">
+              Soy un apasionado desarrollador web full stack con experiencia en HTML, CSS, JavaScript, Node.js, git y Express. 
+              Habilidades en bases de datos SQL y desarrollo tanto front-end como back-end.
+            </p>
             <ul class="list-dev">
               <li data-aos="flip-left"><b>De:</b> Sincelejo, Col</li>
               <li data-aos="flip-left"><b>Vive en:</b> Sincelejo, Col</li>
-              <li data-aos="flip-left"><b>Edad:</b> 26</li>
+              <li data-aos="flip-left"><b>Edad:</b> 27</li>
               <li data-aos="flip-left"><b>Género:</b> Masculino</li>
             </ul>
             <button id="downloadBtn" class="btn" data-aos="flip-right">Descargar CV</button>
@@ -146,14 +151,15 @@
           <h2 class="title-dev" data-aos="flip-right">Educación</h2>
           <ul class="timeline">
             <li>
-              <div class="title">2010</div>
+              <div class="title">2023</div>
               <div class="details" data-aos="flip-right">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                <h5 id="info-university">Análisis y desarrollo de sistemas de información</h5>
+                <small class="fg-theme" translate="no">Sena</small>
+                <p id="text-university">Graduado como tecnólogo en análisis y desarrollo de sistemas de información en el Sena. Destacado por 
+                  liderar proyectos de optimización de procesos.</p>
               </div>
             </li>
-            <li>
+            <!-- <li>
               <div class="title">2009</div>
               <div class="details" data-aos="flip-right">
                 <h5>Specialize of course</h5>
@@ -168,7 +174,7 @@
                 <small class="fg-theme">University of Study</small>
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
         <!-- contenedor de experiencia -->
@@ -176,27 +182,12 @@
           <h2 class="title-dev" id="title-experience" data-aos="flip-right">Experiencia</h2>
           <ul class="timeline mt-4 pr-md-5">
             <li>
-              <div class="title">2017 - Current</div>
+              <div class="title">2023</div>
               <div class="details" data-aos="flip-right">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
-            <li>
-              <div class="title">2014</div>
-              <div class="details" data-aos="flip-right">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
-              </div>
-            </li>
-            <li>
-              <div class="title">2011</div>
-              <div class="details" data-aos="flip-right">
-                <h5>Specialize of course</h5>
-                <small class="fg-theme">University of Study</small>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
+                <h5 id="info-experience">Desarrollador web full stack</h5>
+                <small class="fg-theme" translate="no">Globaltek Development</small>
+                <p id="text-experience">Mantenimiento y mejora de sistemas de facturación electrónica. Resolución de incidencias y desarrollo de nuevas funcionalidades. 
+                  Tecnologías: Java con Spring Boot, SQL Server, JavaScript, HTML y CSS.</p>
               </div>
             </li>
           </ul>
@@ -214,22 +205,22 @@
         <div class="content-information">
           <div class="card-service">
             <div class="icon" data-aos="flip-right">
-              <span><i class="fas fa-code"></i></span>
+              <span><i class="fas fa-laptop"></i></span>
             </div>
             <div class="caption" data-aos="flip-right">
               <h4 class="fg-theme" id="caption-text" data-aos="flip-right">Diseño web</h4>
-              <p data-aos="flip-right">There are many variations of passages of Lorem Ipsum available</p>
+              <p data-aos="flip-right" id="description-service">Diseño y desarrollo web responsive de interfaces.</p>
             </div>
           </div>
         </div>
         <div class="content-information">
           <div class="card-service">
             <div class="icon" data-aos="flip-right">
-              <span><i class="fas fa-tools"></i></span>
+              <span><i class="fas fa-globe"></i></span>
             </div>
             <div class="caption" data-aos="flip-right">
-              <h4 class="fg-theme">SEO</h4>
-              <p data-aos="flip-right">There are many variations of passages of Lorem Ipsum available</p>
+              <h4 class="fg-theme" id="title-service-one">Desarrollo Web</h4>
+              <p data-aos="flip-right" id="service-text-info">Aplicaciones completas, front-end y back-end con HTML, CSS, JS, Node.js, git y Express.</p>
             </div>
           </div>
         </div>
@@ -239,19 +230,19 @@
               <span><i class="fas fa-palette"></i></span>
             </div>
             <div class="caption" data-aos="flip-right">
-              <h4 class="fg-theme">UI/UX Design</h4>
-              <p data-aos="flip-right">There are many variations of passages of Lorem Ipsum available</p>
+              <h4 class="fg-theme" translate="no">UI/UX Design</h4>
+              <p data-aos="flip-right" id="service-text-info-two">Enfoque en la experiencia del usuario y diseño intuitivo.</p>
             </div>
           </div>
         </div>
         <div class="content-information">
           <div class="card-service">
             <div class="icon" data-aos="flip-right">
-              <span><i class="fas fa-laptop"></i></span>
+              <span><i class="fas fa-code"></i></span>
             </div>
             <div class="caption" >
-              <h4 class="fg-theme">Web Development</h4>
-              <p data-aos="flip-right">There are many variations of passages of Lorem Ipsum available</p>
+              <h4 class="fg-theme" translate="no">API Node.js</h4>
+              <p data-aos="flip-right" id="service-text-info-three">Creación eficiente de API con Node.js para aplicaciones dinámicas y escalables.</p>
             </div>
           </div>
         </div>
@@ -366,7 +357,7 @@
                   <input class="form-control" type="text" name="emailjs_subject" id="emailjs_subject" placeholder="Asunto">
                 </div>
                 <div class="message">
-                  <textarea class="form-control" name="emailjs_message" id="emailjs_message" rows="6" placeholder="Escribe tu mensaje..."></textarea>
+                  <textarea class="form-control" name="emailjs_message" id="emailjs_message" rows="6" cols="50" placeholder="Escribe tu mensaje..."></textarea>
                 </div>
                 <div class="error-content">
                   <p class="error" style="display: none;">Por favor, complete todos los campos.</p>
@@ -411,10 +402,9 @@
           <p id="text-redes">Redes sociales</p>
           <p class="divider">---------------------</p>
           <ul class="list-unstyled">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Youtube</a></li>
+            <li><a href="https://github.com/Ramiro2897" target="_blank">GitHub</a></li>
+            <li><a href="https://www.instagram.com/ramirogo28/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100005215098944" target="_blank">Facebook</a></li>
           </ul>
         </div>
         <div class="footer-contact">
