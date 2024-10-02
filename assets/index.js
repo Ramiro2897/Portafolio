@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadBtn = document.getElementById('downloadBtn');
 
   downloadBtn.addEventListener('click', function() {
-    const cvUrl = '/assets/cv/hoja_de_vida.pdf';
+    const cvUrl = '/assets/cv/hoja.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.setAttribute('download', 'hoja_de_vida.pdf');
