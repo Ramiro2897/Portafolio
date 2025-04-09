@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', function () {
     if (window.innerWidth > 768) {
+      navMenu.style.display = 'flex';
       navMenu.classList.remove('show');
       languageSelector.classList.remove('show');
     }
