@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let languageSelector = document.querySelector('.language-selector');
 
   menuToggle.addEventListener('click', function () {
+    alert('entra')
     if (navMenu.style.display === 'none') {
       navMenu.style.display = '';
     }
