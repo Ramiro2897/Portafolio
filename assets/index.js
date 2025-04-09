@@ -1,37 +1,59 @@
 // libreria de scroll
 AOS.init();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let menuToggle = document.getElementById('menu-toggle');
   let navMenu = document.querySelector('header nav ul');
   let languageSelector = document.querySelector('.language-selector');
 
-  menuToggle.addEventListener('click', function() {
-    navMenu.classList.toggle('show');
-    languageSelector.classList.toggle('show');
-  });
+  menuToggle.addEventListener('click', function () {
+    if (navMenu.style.display === 'none') {
+      navMenu.style.display = '';
+    }
 
-  // Controlar el cierre del menú en pantallas grandes
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) { 
-      navMenu.classList.remove('show'); 
-      languageSelector.classList.remove('show'); 
+    if (navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      navMenu.classList.add('hide');
+      setTimeout(() => navMenu.classList.remove('hide'), 400); 
+    } else { 
+      navMenu.classList.remove('hide'); 
+      void navMenu.offsetWidth; 
+      navMenu.classList.add('show');
+    }
+
+    if (languageSelector.classList.contains('show')) {
+      languageSelector.classList.remove('show');
+      languageSelector.classList.add('hide');
+      setTimeout(() => languageSelector.classList.remove('hide'), 400);
+    } else {
+      languageSelector.classList.add('show');
     }
   });
 
-  // Controlar el scroll hacia arriba y hacia abajo
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('show');
+      languageSelector.classList.remove('show');
+    }
+  });
+
   let lastScrollTop = 0;
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     let currentScroll = window.scrollY || document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop) {
       navMenu.classList.remove('show');
+      navMenu.classList.add('hide');
       languageSelector.classList.remove('show');
+      setTimeout(() => navMenu.classList.remove('hide'), 400);
     } else {
       navMenu.classList.remove('show');
+      navMenu.classList.add('hide');
       languageSelector.classList.remove('show');
+      setTimeout(() => navMenu.classList.remove('hide'), 400);
     }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
+  
 });
 
 // pasar text animado
@@ -73,6 +95,7 @@ window.addEventListener("scroll", function() {
       header.style.top = "0";
       header.style.marginTop = "0";
       header.style.backgroundColor = "#343c3c";
+
     } else {
       header.style.position = "relative";
       header.style.top = "auto"; 
@@ -86,17 +109,24 @@ window.addEventListener("scroll", function() {
     header.style.backgroundColor = "rgba(82, 86, 92, 0.8)";
   }
 });
-  // Controlar el cierre del menú al hacer scroll en pantallas grandes
+
+// Controlar el cierre del menú al hacer scroll en pantallas grandes
 window.addEventListener('resize', function() {
     const scrollPosition = window.scrollY;
     const scrollThreshold = 0.8 * window.innerHeight;
+    let navMenu = document.querySelector('header nav ul');
   
-    if (window.innerWidth < 768) { 
+    if (window.innerWidth < 768) {
       header.style.position = "relative";
       header.style.top = "auto";
       header.style.marginTop = "25px";
       header.style.backgroundColor = "rgba(82, 86, 92, 0.8)";
-    } else {
+     
+      navMenu.style.display = 'none';
+      navMenu.classList.remove('show', 'hide');
+      
+    }
+     else {
       if (scrollPosition >= scrollThreshold) {
         header.style.position = "fixed";
         header.style.top = "0";

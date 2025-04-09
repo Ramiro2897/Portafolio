@@ -69,7 +69,7 @@ function toggleLanguage() {
     nameText.innerHTML = "Soy <span>Ramiro</span> González";
     listItems[0].innerHTML = "<b>De:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Vive en:</b> Sincelejo, Col";
-    listItems[2].innerHTML = "<b>Edad:</b> 26";
+    listItems[2].innerHTML = "<b>Edad:</b> 28";
     listItems[3].innerHTML = "<b>Género:</b> Masculino";
     downloadBtn.textContent = "Descargar CV";
     descriptionDev.textContent = "Soy un apasionado desarrollador web full stack con experiencia en HTML, CSS, JavaScript, Node.js, git y Express. Habilidades en bases de datos SQL y desarrollo tanto front-end como back-end."
@@ -129,7 +129,7 @@ function toggleLanguage() {
     nameText.innerHTML = "I'm <span>Ramiro</span> González";
     listItems[0].innerHTML = "<b>From:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Lives in:</b> Sincelejo, Col";
-    listItems[2].innerHTML = "<b>Age:</b> 26";
+    listItems[2].innerHTML = "<b>Age:</b> 28";
     listItems[3].innerHTML = "<b>Gender:</b> Male";
     descriptionDev.textContent = "I am a passionate full-stack web developer with experience in HTML, CSS, JavaScript, Node.js, git, and Express. Skills in SQL databases and development in both front-end and back-end."
     downloadBtn.textContent = "Download CV";
@@ -250,7 +250,7 @@ function toggleLanguageMobile() {
     nameText.innerHTML = "I'm <span>Ramiro</span> González";
     listItems[0].innerHTML = "<b>From:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Lives in:</b> Sincelejo, Col";
-    listItems[2].innerHTML = "<b>Age:</b> 26";
+    listItems[2].innerHTML = "<b>Age:</b> 28";
     listItems[3].innerHTML = "<b>Gender:</b> Male";
     descriptionDev.textContent = "I am a passionate full-stack web developer with experience in HTML, CSS, JavaScript, Node.js, git, and Express. Skills in SQL databases and development in both front-end and back-end."
     downloadBtn.textContent = "Download CV";
@@ -313,7 +313,7 @@ function toggleLanguageMobile() {
     nameText.innerHTML = "Soy <span>Ramiro</span> González";
     listItems[0].innerHTML = "<b>De:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Vive en:</b> Sincelejo, Col";
-    listItems[2].innerHTML = "<b>Edad:</b> 26";
+    listItems[2].innerHTML = "<b>Edad:</b> 28";
     listItems[3].innerHTML = "<b>Género:</b> Masculino";
     descriptionDev.textContent = "Soy un apasionado desarrollador web full stack con experiencia en HTML, CSS, JavaScript, Node.js, git y Express. Habilidades en bases de datos SQL y desarrollo tanto front-end como back-end."
     downloadBtn.textContent = "Descargar CV";
