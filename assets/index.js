@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let languageSelector = document.querySelector('.language-selector');
 
   menuToggle.addEventListener('click', function () {
-    alert('entra')
     if (navMenu.style.display === 'none') {
       navMenu.style.display = '';
     }
@@ -141,22 +140,6 @@ window.addEventListener('resize', function() {
         header.style.backgroundColor = "rgba(82, 86, 92, 0.8)"; 
       }
     }
-});
-
-// boton para ir arriba
-document.addEventListener("DOMContentLoaded", function () {
-  let iconoTop = document.querySelector(".top");
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      iconoTop.style.display = "flex";
-    } else {
-      iconoTop.style.display = "none";
-    }
-  });
-  iconoTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 });
 
 // enlaces
