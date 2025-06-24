@@ -142,22 +142,6 @@ window.addEventListener('resize', function() {
     }
 });
 
-// boton para ir arriba
-document.addEventListener("DOMContentLoaded", function () {
-  let iconoTop = document.querySelector(".top");
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      iconoTop.style.display = "flex";
-    } else {
-      iconoTop.style.display = "none";
-    }
-  });
-  iconoTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
 // enlaces
 window.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('ul li a');
