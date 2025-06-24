@@ -9,6 +9,7 @@ function toggleLanguage() {
   var welcome = document.getElementById('welcome');
   var nameText = document.getElementById('name-text');
   var listItems = document.querySelectorAll('.list-dev li');
+  var professionDev = document.querySelector('.profession-dev');
   var descriptionDev = document.getElementById('information-dev');
   var downloadBtn = document.getElementById('downloadBtn');
   var skillTitle = document.querySelector('.skill-title p');
@@ -18,6 +19,7 @@ function toggleLanguage() {
   var infoUniversity = document.getElementById('info-university');
   var textUniversity = document.getElementById('text-university');
   var infoExperience = document.getElementById('info-experience');
+  var experienceCompany = document.getElementById('experience-company');
   var textExperience = document.getElementById('text-experience');
   var experienceTitle = document.getElementById('title-experience');
   var serviceText = document.querySelector('.text-service p');
@@ -33,12 +35,11 @@ function toggleLanguage() {
   var jobText = document.getElementById('text-job');
   var btnAll = document.getElementById('btn-all');
   var projectsBtn = document.getElementById('projects');
-  var imgProjectOne = document.getElementById('img-project-one');
-  var imgProjectTwo = document.getElementById('img-project-two');
-  var imgProjectThree = document.getElementById('img-project-three');
-  var imgProjectFour = document.getElementById('img-project-four');
-  var imgProjectFive = document.getElementById('img-project-five');
-  var imgProjectSix = document.getElementById('img-project-six');
+  var projectOne = document.getElementById('project-one');
+  var projectTwo = document.getElementById('project-two');
+  var projectThree = document.getElementById('project-three');
+  var projectFour = document.getElementById('project-four');
+  var projectFive = document.getElementById('project-five');
   var textContacto = document.querySelector('.text-contacto p');
   var infoContactText = document.querySelector('.info-contact-text');
   var nameInput = document.getElementById('emailjs_name');
@@ -55,7 +56,6 @@ function toggleLanguage() {
   var copyrightText = document.querySelector('.text-copyright');
 
 
-
   if (spanishOption.style.display === "none") {
     spanishOption.style.display = "flex";
     englishOption.style.display = "none";
@@ -67,6 +67,7 @@ function toggleLanguage() {
     contactLink.textContent = "Contacto";
     welcome.textContent = "Bienvenido";
     nameText.innerHTML = "Soy <span>Ramiro</span> González";
+    professionDev.textContent = "Desarrollador Web";
     listItems[0].innerHTML = "<b>De:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Vive en:</b> Sincelejo, Col";
     listItems[2].innerHTML = "<b>Edad:</b> 28";
@@ -81,7 +82,19 @@ function toggleLanguage() {
     textUniversity.textContent = "Graduado como tecnólogo en análisis y desarrollo de sistemas de información en el Sena. Destacado por liderar proyectos de optimización de procesos.";
     experienceTitle.textContent = 'Experiencia';
     infoExperience.textContent = "Desarrollador web full stack";
-    textExperience.textContent = "Mantenimiento y mejora de sistemas de facturación electrónica. Resolución de incidencias y desarrollo de nuevas funcionalidades. Tecnologías: Java con Spring Boot, SQL Server, JavaScript, HTML y CSS.";
+    experienceCompany.textContent = "Globaltek Development y proyectos freelance";
+    textExperience.innerHTML = `
+      En <strong>Globaltek Development</strong> participé activamente en el mantenimiento y mejora de sistemas de facturación electrónica. Mis tareas incluían la resolución de incidencias, optimización de funcionalidades existentes y desarrollo de nuevas características. Tecnologías utilizadas: <strong>Java con Spring Boot, SQL Server, JavaScript, HTML y CSS</strong>.<br><br>
+
+      Como <strong>freelancer</strong>, desarrollé diversas plataformas completas, tanto en frontend como en backend, utilizando tecnologías como <strong>TypeScript, React, Node.js, Supabase, HTML, CSS y JavaScript</strong>. Además, adquirí experiencia en despliegue de aplicaciones usando servicios como <strong>Render, Railway</strong> y servidores <strong>VPS</strong>.<br><br>
+
+      <strong>Proyectos destacados:</strong><br>
+      <strong>Connected:</strong> Red social tipo comunidad.<br>
+      <strong>Tasly:</strong> Aplicación de tareas estilo Trello.<br>
+      <strong>LuckyDrawHub:</strong> Plataforma de rifas en línea.<br>
+      <strong>Manhatam Restaurante:</strong> Sitio web informativo para restaurante.<br>
+      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.
+    `;
     serviceText.textContent = "Servicio";
     infoText.textContent = "¿Qué puedo hacer?";
     captionText.textContent = "Diseño web";
@@ -95,12 +108,11 @@ function toggleLanguage() {
     jobText.textContent = "Ver mi trabajo";
     btnAll.textContent = "Todo";
     projectsBtn.textContent = "proyectos";
-    imgProjectOne.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación móvil de viajes</h5> <p>Viajes, Descubrimiento</p> <p>Este proyecto es...</p>");
-    imgProjectTwo.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación de música</h5> <p>Música</p> <p>Este proyecto es...</p>");
-    imgProjectThree.setAttribute('data-caption', "<h5 class='fg-theme'>Tablero de Juegos</h5> <p>Juegos, Streaming</p> <p>Este proyecto es...</p>");
-    imgProjectFour.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación de Entrega de Medicamentos</h5> <p>Salud, Medicamentos</p> <p>Este proyecto es...</p>");
-    imgProjectFive.setAttribute('data-caption', "<h5 class='fg-theme'>Descubrimiento Musical</h5> <p>Música, Panel</p> <p>Este proyecto es...</p>");
-    imgProjectSix.setAttribute('data-caption', "<h5 class='fg-theme'>Transmisión de Juegos</h5> <p>Juegos, Transmisión</p> <p>Este proyecto es...</p>");
+    projectOne.textContent = 'Productividad, Organización';
+    projectTwo.textContent = 'Red social, conexión';
+    projectThree.textContent = 'Comida, pedidos';
+    projectFour.textContent = 'Rifas, sorteos';
+    projectFive.textContent = 'Encuestas, estadísticas';
     textContacto.textContent = "Contacto";
     infoContactText.textContent = "Ponerse en contacto";
     nameInput.placeholder = "Nombre";
@@ -126,6 +138,7 @@ function toggleLanguage() {
     portfolioLink.textContent = "Portfolio";
     contactLink.textContent = "Contact";
     welcome.textContent = "Welcome";
+    professionDev.textContent = "Web Developer";
     nameText.innerHTML = "I'm <span>Ramiro</span> González";
     listItems[0].innerHTML = "<b>From:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Lives in:</b> Sincelejo, Col";
@@ -141,7 +154,19 @@ function toggleLanguage() {
     textUniversity.textContent = "Graduated as a technologist in analysis and development of information systems at Sena. Recognized for leading process optimization projects.";
     experienceTitle.textContent = "Experience";
     infoExperience.textContent = "Full stack web developer";
-    textExperience.textContent = "Maintenance and enhancement of electronic billing systems. Incident resolution and development of new functionalities. Technologies: Java with Spring Boot, SQL Server, JavaScript, HTML, and CSS.";
+    experienceCompany.textContent = "Globaltek Development and freelance projects";
+    textExperience.innerHTML = `
+      At <strong>Globaltek Development</strong>, I actively participated in the maintenance and improvement of electronic billing systems. My responsibilities included incident resolution, optimization of existing features, and development of new functionalities. Technologies used: <strong>Java with Spring Boot, SQL Server, JavaScript, HTML, and CSS</strong>.<br><br>
+
+      As a <strong>freelancer</strong>, I developed various complete platforms, both frontend and backend, using technologies such as <strong>TypeScript, React, Node.js, Supabase, HTML, CSS, and JavaScript</strong>. Additionally, I gained experience in deploying applications using services like <strong>Render, Railway</strong>, and <strong>VPS</strong> servers.<br><br>
+
+      <strong>Highlighted Projects:</strong><br>
+      <strong>Connected:</strong> Community-style social network.<br>
+      <strong>Tasly:</strong> Task management app similar to Trello.<br>
+      <strong>LuckyDrawHub:</strong> Online raffle platform.<br>
+      <strong>Manhatam Restaurante:</strong> Informative website for a restaurant.<br>
+      <strong>CENU - DANE:</strong> Educational data management system.
+    `;
     serviceText.textContent = "Service";
     infoText.textContent = "What can I do?";
     captionText.textContent = "Web design";
@@ -155,12 +180,11 @@ function toggleLanguage() {
     jobText.textContent = "See my work";
     btnAll.textContent = "All";
     projectsBtn.textContent = "Projects";
-    imgProjectOne.setAttribute('data-caption', "<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p> <p>This project is...</p>");
-    imgProjectTwo.setAttribute('data-caption', "<h5 class='fg-theme'>Music App</h5> <p>Musics</p> <p>This project is...</p>");
-    imgProjectThree.setAttribute('data-caption', "<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p> <p>This project is...</p>");
-    imgProjectFour.setAttribute('data-caption', "<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p> <p>This project is...</p>");
-    imgProjectFive.setAttribute('data-caption', "<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p> <p>This project is...</p>");
-    imgProjectSix.setAttribute('data-caption', "<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p> <p>This project is...</p>");
+    projectOne.textContent = 'Productivity, Organization';
+    projectTwo.textContent = 'Social media, Connection';
+    projectThree.textContent = 'Food, Orders';
+    projectFour.textContent = 'Raffles, Draws';
+    projectFive.textContent = 'Surveys, Statistics';
     textContacto.textContent = "Contact";
     infoContactText.textContent = "Contact Information";
     nameInput.placeholder = "Name";
@@ -193,6 +217,7 @@ function toggleLanguageMobile() {
   var welcome = document.getElementById('welcome');
   var nameText = document.getElementById('name-text');
   var listItems = document.querySelectorAll('.list-dev li');
+  var professionDev = document.querySelector('.profession-dev');
   var descriptionDev = document.getElementById('information-dev');
   var downloadBtn = document.getElementById('downloadBtn');
   var skillTitle = document.querySelector('.skill-title p');
@@ -216,12 +241,11 @@ function toggleLanguageMobile() {
   var jobText = document.getElementById('text-job');
   var btnAll = document.getElementById('btn-all');
   var projectsBtn = document.getElementById('projects');
-  var imgProjectOne = document.getElementById('img-project-one');
-  var imgProjectTwo = document.getElementById('img-project-two');
-  var imgProjectThree = document.getElementById('img-project-three');
-  var imgProjectFour = document.getElementById('img-project-four');
-  var imgProjectFive = document.getElementById('img-project-five');
-  var imgProjectSix = document.getElementById('img-project-six');
+  var projectOne = document.getElementById('project-one');
+  var projectTwo = document.getElementById('project-two');
+  var projectThree = document.getElementById('project-three');
+  var projectFour = document.getElementById('project-four');
+  var projectFive = document.getElementById('project-five');
   var textContacto = document.querySelector('.text-contacto p');
   var infoContactText = document.querySelector('.info-contact-text');
   var nameInput = document.getElementById('emailjs_name');
@@ -248,6 +272,7 @@ function toggleLanguageMobile() {
     contactLink.textContent = "Contact";
     welcome.textContent = "Welcome";
     nameText.innerHTML = "I'm <span>Ramiro</span> González";
+    professionDev.textContent = "Web Developer";
     listItems[0].innerHTML = "<b>From:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Lives in:</b> Sincelejo, Col";
     listItems[2].innerHTML = "<b>Age:</b> 28";
@@ -262,7 +287,19 @@ function toggleLanguageMobile() {
     textUniversity.textContent = "Graduated as a technologist in analysis and development of information systems at Sena. Recognized for leading process optimization projects.";
     experienceTitle.textContent = "Experience";
     infoExperience.textContent = "Full stack web developer";
-    textExperience.textContent = "Maintenance and enhancement of electronic billing systems. Incident resolution and development of new functionalities. Technologies: Java with Spring Boot, SQL Server, JavaScript, HTML, and CSS.";
+    textExperience.innerHTML = `
+      At <strong>Globaltek Development</strong>, I actively participated in the maintenance and improvement of electronic invoicing systems. My tasks included incident resolution, optimization of existing features, and development of new functionalities. Technologies used: <strong>Java with Spring Boot, SQL Server, JavaScript, HTML, and CSS</strong>.<br><br>
+
+      As a <strong>freelancer</strong>, I developed several complete platforms, both frontend and backend, using technologies such as <strong>TypeScript, React, Node.js, Supabase, HTML, CSS, and JavaScript</strong>. I also gained experience in deploying applications using services like <strong>Render, Railway</strong>, and <strong>VPS servers</strong>.<br><br>
+
+      <strong>Highlighted projects:</strong><br>
+      <strong>Connected:</strong> Community-style social network.<br>
+      <strong>Tasly:</strong> Trello-style task application.<br>
+      <strong>LuckyDrawHub:</strong> Online raffle platform.<br>
+      <strong>Manhatam Restaurant:</strong> Informational website for a restaurant.<br>
+      <strong>CENU - DANE:</strong> Educational data management system.
+    `;
+
     serviceText.textContent = "Service";
     serviceText.textContent = "Service";
     infoText.textContent = "What can I do?";
@@ -277,12 +314,11 @@ function toggleLanguageMobile() {
     jobText.textContent = "See my work";
     btnAll.textContent = "All";
     projectsBtn.textContent = "Projects";
-    imgProjectOne.setAttribute('data-caption', "<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p> <p>This project is...</p>");
-    imgProjectTwo.setAttribute('data-caption', "<h5 class='fg-theme'>Music App</h5> <p>Musics</p> <p>This project is...</p>");
-    imgProjectThree.setAttribute('data-caption', "<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p> <p>This project is...</p>");
-    imgProjectFour.setAttribute('data-caption', "<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p> <p>This project is...</p>");
-    imgProjectFive.setAttribute('data-caption', "<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p> <p>This project is...</p>");
-    imgProjectSix.setAttribute('data-caption', "<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p> <p>This project is...</p>");
+    projectOne.textContent = 'Productivity, Organization';
+    projectTwo.textContent = 'Social media, Connection';
+    projectThree.textContent = 'Food, Orders';
+    projectFour.textContent = 'Raffles, Draws';
+    projectFive.textContent = 'Surveys, Statistics';
     textContacto.textContent = "Contact";
     infoContactText.textContent = "Contact Information";
     nameInput.placeholder = "Name";
@@ -311,6 +347,7 @@ function toggleLanguageMobile() {
     contactLink.textContent = "Contacto";
     welcome.textContent = "Bienvenido";
     nameText.innerHTML = "Soy <span>Ramiro</span> González";
+    professionDev.textContent = "Desarrollador Web";
     listItems[0].innerHTML = "<b>De:</b> Sincelejo, Col";
     listItems[1].innerHTML = "<b>Vive en:</b> Sincelejo, Col";
     listItems[2].innerHTML = "<b>Edad:</b> 28";
@@ -324,7 +361,18 @@ function toggleLanguageMobile() {
     infoUniversity.textContent = "Análisis y desarrollo de sistemas de información";
     textUniversity.textContent = "Graduado como tecnólogo en análisis y desarrollo de sistemas de información en el Sena. Destacado por liderar proyectos de optimización de procesos.";
     infoExperience.textContent = "Desarrollador web full stack";
-    textExperience.textContent = "Mantenimiento y mejora de sistemas de facturación electrónica. Resolución de incidencias y desarrollo de nuevas funcionalidades. Tecnologías: Java con Spring Boot, SQL Server, JavaScript, HTML y CSS.";
+    textExperience.innerHTML = `
+      En <strong>Globaltek Development</strong> participé activamente en el mantenimiento y mejora de sistemas de facturación electrónica. Mis tareas incluían la resolución de incidencias, optimización de funcionalidades existentes y desarrollo de nuevas características. Tecnologías utilizadas: <strong>Java con Spring Boot, SQL Server, JavaScript, HTML y CSS</strong>.<br><br>
+
+      Como <strong>freelancer</strong>, desarrollé diversas plataformas completas, tanto en frontend como en backend, utilizando tecnologías como <strong>TypeScript, React, Node.js, Supabase, HTML, CSS y JavaScript</strong>. Además, adquirí experiencia en despliegue de aplicaciones usando servicios como <strong>Render, Railway</strong> y servidores <strong>VPS</strong>.<br><br>
+
+      <strong>Proyectos destacados:</strong><br>
+      <strong>Connected:</strong> Red social tipo comunidad.<br>
+      <strong>Tasly:</strong> Aplicación de tareas estilo Trello.<br>
+      <strong>LuckyDrawHub:</strong> Plataforma de rifas en línea.<br>
+      <strong>Manhatam Restaurante:</strong> Sitio web informativo para restaurante.<br>
+      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.
+    `;
     experienceTitle.textContent = 'Experiencia';
     serviceText.textContent = "Servicio";
     infoText.textContent = "¿Qué puedo hacer?";
@@ -339,12 +387,11 @@ function toggleLanguageMobile() {
     jobText.textContent = "Ver mi trabajo";
     btnAll.textContent = "Todo";
     projectsBtn.textContent = "proyectos";
-    imgProjectOne.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación móvil de viajes</h5> <p>Viajes, Descubrimiento</p> <p>Este proyecto es...</p>");
-    imgProjectTwo.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación de música</h5> <p>Música</p> <p>Este proyecto es...</p>");
-    imgProjectThree.setAttribute('data-caption', "<h5 class='fg-theme'>Tablero de Juegos</h5> <p>Juegos, Streaming</p> <p>Este proyecto es...</p>");
-    imgProjectFour.setAttribute('data-caption', "<h5 class='fg-theme'>Aplicación de Entrega de Medicamentos</h5> <p>Salud, Medicamentos</p> <p>Este proyecto es...</p>");
-    imgProjectFive.setAttribute('data-caption', "<h5 class='fg-theme'>Descubrimiento Musical</h5> <p>Música, Panel</p> <p>Este proyecto es...</p>");
-    imgProjectSix.setAttribute('data-caption', "<h5 class='fg-theme'>Transmisión de Juegos</h5> <p>Juegos, Transmisión</p> <p>Este proyecto es...</p>");
+    projectOne.textContent = 'Productividad, Organización';
+    projectTwo.textContent = 'Red social, conexión';
+    projectThree.textContent = 'Comida, pedidos';
+    projectFour.textContent = 'Rifas, sorteos';
+    projectFive.textContent = 'Encuestas, estadísticas';
     textContacto.textContent = "Contacto";
     infoContactText.textContent = "Ponerse en contacto";
     nameInput.placeholder = "Nombre";
