@@ -215,10 +215,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadBtn = document.getElementById('downloadBtn');
 
   downloadBtn.addEventListener('click', function() {
-    const cvUrl = 'hoja_de_vida_ramiro.pdf';
+    const cvUrl = 'RamiroGonzalez_CV.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.setAttribute('download', 'hoja_de_vida_ramiro.pdf');
+    link.setAttribute('download', 'RamiroGonzalez_CV.pdf');
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
