@@ -112,7 +112,7 @@ function toggleLanguage() {
     projectTwo.textContent = 'Red social, conexión';
     projectThree.textContent = 'Comida, pedidos';
     projectFour.textContent = 'Rifas, sorteos';
-    projectFive.textContent = 'Encuestas, estadísticas';
+    projectFive.textContent = 'Palabras, adivinanza';
     textContacto.textContent = "Contacto";
     infoContactText.textContent = "Ponerse en contacto";
     nameInput.placeholder = "Nombre";
@@ -184,7 +184,7 @@ function toggleLanguage() {
     projectTwo.textContent = 'Social media, Connection';
     projectThree.textContent = 'Food, Orders';
     projectFour.textContent = 'Raffles, Draws';
-    projectFive.textContent = 'Surveys, Statistics';
+    projectFive.textContent = 'Words, Guessing';
     textContacto.textContent = "Contact";
     infoContactText.textContent = "Contact Information";
     nameInput.placeholder = "Name";
@@ -318,7 +318,7 @@ function toggleLanguageMobile() {
     projectTwo.textContent = 'Social media, Connection';
     projectThree.textContent = 'Food, Orders';
     projectFour.textContent = 'Raffles, Draws';
-    projectFive.textContent = 'Surveys, Statistics';
+    projectFive.textContent = 'Words, Guessing';
     textContacto.textContent = "Contact";
     infoContactText.textContent = "Contact Information";
     nameInput.placeholder = "Name";
@@ -391,7 +391,7 @@ function toggleLanguageMobile() {
     projectTwo.textContent = 'Red social, conexión';
     projectThree.textContent = 'Comida, pedidos';
     projectFour.textContent = 'Rifas, sorteos';
-    projectFive.textContent = 'Encuestas, estadísticas';
+    projectFive.textContent = 'Palabras, adivinanza';
     textContacto.textContent = "Contacto";
     infoContactText.textContent = "Ponerse en contacto";
     nameInput.placeholder = "Nombre";
