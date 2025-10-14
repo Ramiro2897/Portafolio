@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadBtn = document.getElementById('downloadBtn');
 
   downloadBtn.addEventListener('click', function() {
-    const cvUrl = 'https://portafolio-brtx.onrender.com/html/CV_RamiroGonzalez.pdf';
+    const cvUrl = 'https://portafolio-l3cz.onrender.com/html/CV_RamiroGonzalez.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.setAttribute('download', 'RamiroGonzalez_CV.pdf');
