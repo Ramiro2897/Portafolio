@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cvUrl = 'https://portafolio-l3cz.onrender.com/html/CV_RamiroGonzalez.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.setAttribute('download', 'RamiroGonzalez_CV.pdf');
+    link.setAttribute('download', 'CV_RamiroGonzalez.pdf');
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
