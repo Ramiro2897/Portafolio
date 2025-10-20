@@ -93,7 +93,8 @@ function toggleLanguage() {
       <strong>Tasly:</strong> Aplicación de tareas estilo Trello.<br>
       <strong>LuckyDrawHub:</strong> Plataforma de rifas en línea.<br>
       <strong>Manhatam Restaurante:</strong> Sitio web informativo para restaurante.<br>
-      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.
+      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.<br>
+      <strong>Hangman Game:</strong> Juego del ahorcado con lógica personalizada y diseño responsivo.
     `;
     serviceText.textContent = "Servicio";
     infoText.textContent = "¿Qué puedo hacer?";
@@ -165,7 +166,8 @@ function toggleLanguage() {
       <strong>Tasly:</strong> Task management app similar to Trello.<br>
       <strong>LuckyDrawHub:</strong> Online raffle platform.<br>
       <strong>Manhatam Restaurante:</strong> Informative website for a restaurant.<br>
-      <strong>CENU - DANE:</strong> Educational data management system.
+      <strong>CENU - DANE:</strong> Educational data management system.<br>
+      <strong>Hangman Game:</strong> Interactive hangman game with custom logic and responsive design.
     `;
     serviceText.textContent = "Service";
     infoText.textContent = "What can I do?";
@@ -297,7 +299,8 @@ function toggleLanguageMobile() {
       <strong>Tasly:</strong> Trello-style task application.<br>
       <strong>LuckyDrawHub:</strong> Online raffle platform.<br>
       <strong>Manhatam Restaurant:</strong> Informational website for a restaurant.<br>
-      <strong>CENU - DANE:</strong> Educational data management system.
+      <strong>CENU - DANE:</strong> Educational data management system.<br>
+      <strong>Hangman Game:</strong> Interactive hangman game with custom logic and responsive design.
     `;
 
     serviceText.textContent = "Service";
@@ -371,7 +374,8 @@ function toggleLanguageMobile() {
       <strong>Tasly:</strong> Aplicación de tareas estilo Trello.<br>
       <strong>LuckyDrawHub:</strong> Plataforma de rifas en línea.<br>
       <strong>Manhatam Restaurante:</strong> Sitio web informativo para restaurante.<br>
-      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.
+      <strong>CENU - DANE:</strong> Sistema de gestión de datos educativos.<br>
+      <strong>Hangman Game:</strong> Juego del ahorcado con lógica personalizada y diseño responsivo.
     `;
     experienceTitle.textContent = 'Experiencia';
     serviceText.textContent = "Servicio";

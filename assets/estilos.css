@@ -217,7 +217,7 @@ ul li a:hover, .active {
   max-width: 320px;
   aspect-ratio: 3 / 3.4;
   border-radius: 10%;
-  background-image: url('/assets/img/img-portfolio.webp');
+  background-image: url('/assets/img/portfolio.png');
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
